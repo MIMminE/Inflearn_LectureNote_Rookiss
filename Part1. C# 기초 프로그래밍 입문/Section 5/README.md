@@ -22,11 +22,11 @@ class Creature
     protected int damage;
     protected bool alive;
 
-    public static void Battle(Creature battleCreature1, Creature battleCreature2)
+    public static void Battle(Creature battleCreature1, Creature battleCreature2);
     public virtual void Attack(Creature target) { }
-    protected void Die()
-    public void Damage(int inputDamgage) 
-    public bool GetAlive()
+    protected void Die();
+    public void Damage(int inputDamgage);
+    public bool GetAlive();
 }
 ```
 - 자식 클래스로 Player 와 Monster 를 가지며 활동하는 생명체들의 생존, 전투 등을 관리하기 위해 설계했다.
