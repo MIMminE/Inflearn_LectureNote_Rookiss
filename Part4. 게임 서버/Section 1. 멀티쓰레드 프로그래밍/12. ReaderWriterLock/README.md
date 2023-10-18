@@ -1,4 +1,4 @@
-# Section 1.12 ReaderWriterLock
+# Section 1.12 < ReaderWriterLock >
 
 ## 지금까지 배운 락 기법에 대한 복습
 
