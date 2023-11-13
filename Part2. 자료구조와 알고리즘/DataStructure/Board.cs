@@ -8,14 +8,19 @@ namespace DataStructure
         {
             Empty,
             Wall,
-            player
-        }
+            Dest,
+			Player
+		}
 
         // 2차원 배열로 사용
         public TileType[,] Tile {  get; private set; }
         public int Size { get; private set; }
         private Player _player;
         Random rand = new Random();
+
+        public int DesY { get; private set; }
+        public int DesX { get; private set; }
+        public void SetDestYX(int y, int x) {  DesY = y; DesX = x; Tile[y, x] = TileType.Dest; }
 
         #region Tile 초기화 로직
         public void Init(int size, Player player)
@@ -53,6 +58,12 @@ namespace DataStructure
                         Tile[y, x] = TileType.Wall;
                         continue;
                     }
+                    
+                    if (x == DesX && y == DesY)
+                    {
+						Tile[y, x] = TileType.Dest;
+                        continue;
+					}
                     Tile[y, x] = TileType.Empty;
                 }
             }
@@ -61,7 +72,13 @@ namespace DataStructure
             {
                 for (int x = 1; x < size; x += 2)
                 {
-                    if (x == size - 2 && y == size - 2)
+					if (x == DesX && y == DesY)
+					{
+						Tile[y, x] = TileType.Dest;
+						continue;
+					}
+
+					if (x == size - 2 && y == size - 2)
                         continue;
 
                     if( x == size - 2)
@@ -74,8 +91,9 @@ namespace DataStructure
                         Tile[y, x + 1] = TileType.Empty;
                         continue;
                     }
+		
 
-                    int randValue = rand.Next(0, 2);
+					int randValue = rand.Next(0, 2);
                     if (randValue == 0)
                         Tile[y + 1, x] = TileType.Empty;
                     else
@@ -94,7 +112,7 @@ namespace DataStructure
             {
                 for (int x = 0; x < size; x++)
                 {
-                    if (x % 2 == 0 | y % 2 == 0)
+					if (x % 2 == 0 | y % 2 == 0)
                     {
                         Tile[y, x] = TileType.Wall;
                         continue;
@@ -154,8 +172,9 @@ namespace DataStructure
             {
                 for (int x = 0; x < Size; x++)
                 {
+
                     if(y == _player.PosY && x == _player.PosX)
-                        GetTileColor(TileType.player);
+                        GetTileColor(TileType.Player);
                     else
                         GetTileColor(Tile[y, x]);
                     Console.Write(CIRCLE);
@@ -167,13 +186,11 @@ namespace DataStructure
         public void GetTileColor(TileType tileType)
         {
             if (tileType == TileType.Empty) Console.ForegroundColor = ConsoleColor.Green;
-            else if (tileType == TileType.player) Console.ForegroundColor = ConsoleColor.Blue;
-            else Console.ForegroundColor = ConsoleColor.Red;
+            else if (tileType == TileType.Player) Console.ForegroundColor = ConsoleColor.Blue;
+			else if (tileType == TileType.Dest) Console.ForegroundColor = ConsoleColor.Yellow;
+			else Console.ForegroundColor = ConsoleColor.Red;
         }
         #endregion
-
-
-
 
     }
 }

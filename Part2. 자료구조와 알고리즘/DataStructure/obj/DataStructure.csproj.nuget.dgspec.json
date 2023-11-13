@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\github\\Inflearn_LectureNote_Rookiss\\Part2. 자료구조와 알고리즘\\DataStructure\\DataStructure.csproj": {}
+    "C:\\Users\\secureletter\\Documents\\GitHub\\Inflearn_LectureNote_Rookiss\\Part2. 자료구조와 알고리즘\\DataStructure\\DataStructure.csproj": {}
   },
   "projects": {
-    "D:\\github\\Inflearn_LectureNote_Rookiss\\Part2. 자료구조와 알고리즘\\DataStructure\\DataStructure.csproj": {
+    "C:\\Users\\secureletter\\Documents\\GitHub\\Inflearn_LectureNote_Rookiss\\Part2. 자료구조와 알고리즘\\DataStructure\\DataStructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\github\\Inflearn_LectureNote_Rookiss\\Part2. 자료구조와 알고리즘\\DataStructure\\DataStructure.csproj",
+        "projectUniqueName": "C:\\Users\\secureletter\\Documents\\GitHub\\Inflearn_LectureNote_Rookiss\\Part2. 자료구조와 알고리즘\\DataStructure\\DataStructure.csproj",
         "projectName": "DataStructure",
-        "projectPath": "D:\\github\\Inflearn_LectureNote_Rookiss\\Part2. 자료구조와 알고리즘\\DataStructure\\DataStructure.csproj",
-        "packagesPath": "C:\\Users\\harun\\.nuget\\packages\\",
-        "outputPath": "D:\\github\\Inflearn_LectureNote_Rookiss\\Part2. 자료구조와 알고리즘\\DataStructure\\obj\\",
+        "projectPath": "C:\\Users\\secureletter\\Documents\\GitHub\\Inflearn_LectureNote_Rookiss\\Part2. 자료구조와 알고리즘\\DataStructure\\DataStructure.csproj",
+        "packagesPath": "C:\\Users\\secureletter\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\secureletter\\Documents\\GitHub\\Inflearn_LectureNote_Rookiss\\Part2. 자료구조와 알고리즘\\DataStructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\harun\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\secureletter\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -55,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
         }
       }
     }
