@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace DataStructure
+namespace Section2
 {
     class Board
     {

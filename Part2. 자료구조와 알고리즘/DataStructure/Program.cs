@@ -1,4 +1,4 @@
-﻿namespace DataStructure
+﻿namespace Section2
 {
     class Program
     {
