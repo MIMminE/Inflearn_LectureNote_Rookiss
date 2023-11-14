@@ -107,7 +107,7 @@ namespace Section3
 		    { 0, 1, 0, 1, 0, 0 },
             { 1, 0, 1, 1, 0, 0 },
             { 0, 1, 0, 0, 0, 0 },
-            { 1, 1, 0, 1, 0, 0 },
+            { 1, 1, 0, 0, 1, 0 },
             { 0, 0, 0, 1, 0, 1 },
             { 0, 0, 0, 0, 1, 0 }
         };
@@ -155,8 +155,31 @@ namespace Section3
         }
         #endregion
 
+        #region 너비 우선 탐색 (BFS)
         bool[] found = new bool[6];
-        public void BFS(int start)
+        public void BFS_toList(int start)
+        {
+            Queue<int> q = new Queue<int>();
+            q.Enqueue(start);
+            found[start] = true;
+
+			while (q.Count > 0)
+            {
+                int now = q.Dequeue();
+                Console.WriteLine(now);
+
+                foreach(int next in adjacent1[now])
+                {
+                    if (!found[next])
+                    {
+						q.Enqueue(next);
+						found[next] = true;
+					}
+				}
+            }
+		}
+        
+        public void BFS_toArray(int start)
         {
             Queue<int> q = new Queue<int>();
             q.Enqueue(start);
@@ -166,15 +189,146 @@ namespace Section3
             {
                 int now = q.Dequeue();
                 Console.WriteLine(now);
-                foreach (int next in adjacent1[now])
+
+                for (int next = 0; next < adjacent2.GetLength(0); next++)
                 {
-                    if (!found[next])
-                    {
-                        q.Enqueue(next);
-                        found[next] = true;
-                    }
-                }
+                    if (adjacent2[now, next] == 0) continue;
+					if (found[next]) continue;
+                    q.Enqueue(next);
+                    found[next] = true;
+				}
             }
         }
+		#endregion
+
+		#region 코딩 테스트 문제 DFS 알고리즘 예제
+
+        static public int[,] Sample = new int[,]
+        {
+            { 1, 0, 1, 1, 1 },
+            { 1, 0, 1, 0, 1 },
+            { 1, 0, 1, 1, 1 },
+            { 1, 1, 1, 0, 1 },
+            { 0, 0, 0, 0, 1 }
+		};
+
+
+        public node[,] MapConvert(int[,] map)
+        {
+            int mapLengthY = map.GetLength(0);
+			int mapLengthX = map.GetLength(1);
+
+            node[,] nodeArray = new node[mapLengthY, mapLengthX];
+            int num = 0;
+            for(int i = 0;  i < mapLengthY; i++)
+            {
+                for (int j = 0; j < mapLengthX; j++)
+                {
+                    num++;
+                    nodeArray[i, j] = new node() { id = num, x = j, y = i, IsValid = IsValid(map, i, j), distance = 0, perent = 0 };
+				}
+            }
+            return nodeArray;
+        } 
+        public int[] IsValid(int[,] map, int posY, int posX)
+        {
+            int[] isValid = { 0, 0, 0, 0 };
+            int[,] moveDelta = new int[4, 2]
+            {
+                { -1, 0 },
+                { +1, 0 },
+                { 0, -1 },
+                { 0, +1 }
+            };
+
+            bool[] useIndex = new bool[4] { true, true, true, true }; // 상 하 좌 우
+			if (posY == 0) useIndex[0] = false;
+			if (posY == map.GetLength(0) - 1) useIndex[1] = false;
+			if (posX == 0) useIndex[2] = false;
+			if (posX == map.GetLength(1) - 1) useIndex[3] = false;
+
+            for (int i = 0; i <4; i++)
+            {
+                if (useIndex[i])
+                    if (map[posY + moveDelta[i, 0], posX + moveDelta[i, 1]] == 1) isValid[i] = 1;
+            }
+
+            return isValid;
+		}
+
+
+		public void Solution(int[,] maps)
+        {
+            int startX = 0; 
+            int startY = 0;
+			node[,] map = MapConvert(maps);
+            bool[,] found = new bool[map.GetLength(0), map.GetLength(1)];
+
+			Queue<node> q = new Queue<node>();
+            q.Enqueue(map[startY, startX]);
+            found[startY, startX] = true;
+
+            int nowY = startY;
+            int nowX = startX;
+			while (q.Count > 0)
+            {
+                node now = q.Dequeue();
+                nowY = now.y;
+				nowX = now.x;
+                if (now.IsValid[0] == 1)
+                {
+                    if (found[nowY - 1, nowX] == false)
+                    {
+                        map[nowY - 1, nowX].distance = map[nowY, nowX].distance + 1;
+						q.Enqueue(map[nowY - 1, nowX]);
+						found[nowY - 1, nowX] = true;
+					}
+				}
+				if (now.IsValid[1] == 1)
+                {
+                    if (found[nowY + 1, nowX] == false)
+                    {
+						map[nowY + 1, nowX].distance = map[nowY, nowX].distance + 1;
+						q.Enqueue(map[nowY + 1, nowX]);
+						found[nowY + 1, nowX] = true;
+					}
+				}
+				if (now.IsValid[2] == 1)
+				{
+                    if(found[nowY, nowX - 1] == false)
+                    {
+						map[nowY, nowX - 1].distance = map[nowY, nowX].distance + 1;
+						q.Enqueue(map[nowY, nowX - 1]);
+						found[nowY, nowX - 1] = true;
+					}
+				}
+				if (now.IsValid[3] == 1)
+				{
+					if(found[nowY, nowX + 1] == false)
+                    {
+						map[nowY, nowX + 1].distance = map[nowY, nowX].distance + 1;
+						q.Enqueue(map[nowY, nowX + 1]);
+						found[nowY, nowX + 1] = true;
+					}
+				}
+            }
+
+
+			Console.WriteLine(map[4,4].distance);
+        }
+		#endregion
+
+
+
+	}
+
+    struct node
+    {   
+        public int id;
+        public int x;
+        public int y;
+        public int[] IsValid;
+        public int distance;
+        public int perent;
     }
 }

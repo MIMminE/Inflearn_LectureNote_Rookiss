@@ -144,7 +144,6 @@ namespace Section2
                     {
                         int xValue = rand.Next(0, rightCount + 1);
                         Tile[y + 1, x - xValue * 2] = TileType.Empty;
-
                         rightCount = 0;
                     }
                     else

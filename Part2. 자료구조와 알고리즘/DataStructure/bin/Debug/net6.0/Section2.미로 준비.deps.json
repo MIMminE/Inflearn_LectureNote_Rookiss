@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Section2.미로 준비/1.0.0": {
+        "runtime": {
+          "Section2.미로 준비.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Section2.미로 준비/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

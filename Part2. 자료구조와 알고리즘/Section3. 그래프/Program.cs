@@ -41,7 +41,7 @@
             #endregion
 
             GraphTest graphTest = new GraphTest();
-            graphTest.BFS(0);
+			graphTest.BFS_toArray(0);
 		}
 	}
 }
