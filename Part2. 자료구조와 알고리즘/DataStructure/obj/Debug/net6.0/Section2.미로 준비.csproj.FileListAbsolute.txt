@@ -13,3 +13,17 @@ C:\Users\secureletter\Documents\GitHub\Inflearn_LectureNote_Rookiss\Part2. 자�
 C:\Users\secureletter\Documents\GitHub\Inflearn_LectureNote_Rookiss\Part2. 자료구조와 알고리즘\DataStructure\obj\Debug\net6.0\Section2.미로 준비.pdb
 C:\Users\secureletter\Documents\GitHub\Inflearn_LectureNote_Rookiss\Part2. 자료구조와 알고리즘\DataStructure\obj\Debug\net6.0\Section2.미로 준비.genruntimeconfig.cache
 C:\Users\secureletter\Documents\GitHub\Inflearn_LectureNote_Rookiss\Part2. 자료구조와 알고리즘\DataStructure\obj\Debug\net6.0\ref\Section2.미로 준비.dll
+D:\github\Inflearn_LectureNote_Rookiss\Part2. 자료구조와 알고리즘\DataStructure\bin\Debug\net6.0\Section2.미로 준비.exe
+D:\github\Inflearn_LectureNote_Rookiss\Part2. 자료구조와 알고리즘\DataStructure\bin\Debug\net6.0\Section2.미로 준비.deps.json
+D:\github\Inflearn_LectureNote_Rookiss\Part2. 자료구조와 알고리즘\DataStructure\bin\Debug\net6.0\Section2.미로 준비.runtimeconfig.json
+D:\github\Inflearn_LectureNote_Rookiss\Part2. 자료구조와 알고리즘\DataStructure\bin\Debug\net6.0\Section2.미로 준비.dll
+D:\github\Inflearn_LectureNote_Rookiss\Part2. 자료구조와 알고리즘\DataStructure\bin\Debug\net6.0\Section2.미로 준비.pdb
+D:\github\Inflearn_LectureNote_Rookiss\Part2. 자료구조와 알고리즘\DataStructure\obj\Debug\net6.0\Section2.미로 준비.GeneratedMSBuildEditorConfig.editorconfig
+D:\github\Inflearn_LectureNote_Rookiss\Part2. 자료구조와 알고리즘\DataStructure\obj\Debug\net6.0\Section2.미로 준비.AssemblyInfoInputs.cache
+D:\github\Inflearn_LectureNote_Rookiss\Part2. 자료구조와 알고리즘\DataStructure\obj\Debug\net6.0\Section2.미로 준비.AssemblyInfo.cs
+D:\github\Inflearn_LectureNote_Rookiss\Part2. 자료구조와 알고리즘\DataStructure\obj\Debug\net6.0\Section2.미로 준비.csproj.CoreCompileInputs.cache
+D:\github\Inflearn_LectureNote_Rookiss\Part2. 자료구조와 알고리즘\DataStructure\obj\Debug\net6.0\Section2.미로 준비.dll
+D:\github\Inflearn_LectureNote_Rookiss\Part2. 자료구조와 알고리즘\DataStructure\obj\Debug\net6.0\refint\Section2.미로 준비.dll
+D:\github\Inflearn_LectureNote_Rookiss\Part2. 자료구조와 알고리즘\DataStructure\obj\Debug\net6.0\Section2.미로 준비.pdb
+D:\github\Inflearn_LectureNote_Rookiss\Part2. 자료구조와 알고리즘\DataStructure\obj\Debug\net6.0\Section2.미로 준비.genruntimeconfig.cache
+D:\github\Inflearn_LectureNote_Rookiss\Part2. 자료구조와 알고리즘\DataStructure\obj\Debug\net6.0\ref\Section2.미로 준비.dll

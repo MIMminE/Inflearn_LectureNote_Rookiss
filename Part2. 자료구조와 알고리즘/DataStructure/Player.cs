@@ -34,9 +34,60 @@ namespace Section2
             _board.SetDestYX(destY, destX);
             //RightHand();
 
-            BFS();
+            BFS_practice();
 		}
 		#region 플레이어 이동 로직
+        void BFS_practice()
+        {
+            bool[,] found = new bool[_board.Size, _board.Size];
+            Pos[,] parent = new Pos[_board.Size, _board.Size];
+            int[] deltaY = new int[4] { -1, 1, 0, 0 };
+            int[] deltaX = new int[4] { 0, 0, -1, 1 };
+
+            Queue<Pos> q = new Queue<Pos>();
+            q.Enqueue(new Pos(PosY, PosX));
+            found[PosY, PosX] = true;
+            parent[PosY, PosX] = new Pos(PosY, PosX);
+
+            while (q.Count > 0 )
+            {
+                Pos now = q.Dequeue();
+                int nowY = now.Y;
+                int nowX = now.X;
+
+                for ( int i = 0; i < 4; i++)
+                {
+                    int nextY = nowY + deltaY[i];
+                    int nextX = nowX + deltaX[i];
+                    // 배열의 유효범위를 초과하는 연산을 막기 위하여 사용된 조건식
+                    if (nextY < 0 || nextY >= _board.Size || nextX < 0 || nextX >= _board.Size) continue;
+                    // 간선으로 연결이 되었는지(이동이 가능한지아닌지)
+                    if (_board.Tile[nextY, nextX] != Board.TileType.Wall)
+                    {
+                        // 이전에 이미 방문한 곳인지 아닌지)
+                        if (found[nextY, nextX]) continue;
+                        q.Enqueue(new Pos(nextY, nextX));
+                        found[nextY, nextX] = true;
+                        parent[nextY, nextX] = new Pos(nowY, nowX);
+                    }
+                }
+            }
+
+
+            int parentY = _board.DesY;
+            int parentX = _board.DesX;
+            while(parentY != parent[parentY, parentX].Y || parentX != parent[parentY, parentX].X )
+            {
+                _movePath.Add(new int[2] { parentY, parentX });
+                parentY = parent[parentY, parentX].Y;
+                parentX = parent[parentY, parentX].X;
+            }
+            _movePath.Add(new int[2] { parent[parentY, parentX].Y, parent[parentY, parentX].X });
+            _movePath.Reverse();
+
+        } 
+
+
 		void BFS()
 		{
             int[] deltaY = new int[] { -1, 0, 1, 0 };
