@@ -1,4 +1,4 @@
-# Section 2-4 오른손 법칙
+# Section 2-5 오른손 법칙
 ## 우수법(오른손법칙)
 
 오른손으로 벽을 짚으면서 이동하면 언젠가는 목적지로 도달할수 있다의 개념이다. **프로세스 순서는 다음과 같다.**
@@ -57,26 +57,26 @@ int[] frontX = new int[4] { 0, -1, 0, 1 };
 // 목적지에 도착했는지 확인
 while (PosY != board.DesY || PosX != board.DesX)
 {
-		// 1. 현재 바라보는 방향을 기준으로 오른쪽으로 갈 수 있는지 확인.
-		if (_board.Tile[PosY + frontY[(_dir - 1 + 4) % 4], PosX + frontX[(_dir - 1 + 4) % 4]] != Board.TileType.Wall) 
-	  {
-	      // 오른족 방향으로 90도 회전, 앞으로 전진
-	      _dir = (_dir - 1 + 4) % 4;
-	      PosY = PosY + frontY[_dir];
-	      PosX = PosX + frontX[_dir];
-	      _movePath.Add(new int[2] { PosY, PosX });
-		}
-		  // 2. 현재 바라보는 방향으로 앞으로 갈 수 있는지 확인.
-	  else if (_board.Tile[PosY + frontY[_dir], PosX + frontX[_dir]] != Board.TileType.Wall)
-	  {
-				PosY = PosY + frontY[_dir];
-				PosX = PosX + frontX[_dir];
-				_movePath.Add(new int[2] { PosY, PosX });
-		}
-	  else
-	  {
-				// 왼쪽 방향 90도 회전
-				_dir = (_dir + 1 + 4) % 4;
-		}
+    // 1. 현재 바라보는 방향을 기준으로 오른쪽으로 갈 수 있는지 확인.
+    if (_board.Tile[PosY + frontY[(_dir - 1 + 4) % 4], PosX + frontX[(_dir - 1 + 4) % 4]] != Board.TileType.Wall) 
+    {
+        // 오른족 방향으로 90도 회전, 앞으로 전진
+        _dir = (_dir - 1 + 4) % 4;
+        PosY = PosY + frontY[_dir];
+        PosX = PosX + frontX[_dir];
+        _movePath.Add(new int[2] { PosY, PosX });
+    }
+    // 2. 현재 바라보는 방향으로 앞으로 갈 수 있는지 확인.
+    else if (_board.Tile[PosY + frontY[_dir], PosX + frontX[_dir]] != Board.TileType.Wall)
+    {
+        PosY = PosY + frontY[_dir];
+        PosX = PosX + frontX[_dir];
+        _movePath.Add(new int[2] { PosY, PosX });
+    }
+    else
+    {
+        // 왼쪽 방향 90도 회전
+        _dir = (_dir + 1 + 4) % 4;
+    }
 }
 ```
