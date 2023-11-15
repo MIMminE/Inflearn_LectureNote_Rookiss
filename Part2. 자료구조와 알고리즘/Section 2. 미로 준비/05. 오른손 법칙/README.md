@@ -22,8 +22,8 @@ public enum Dir
 {
     Up = 0,
     Left = 1,
-		Down = 2,
-		Right = 3
+    Down = 2,
+    Right = 3
 }
 
 private int _dir = (int)Dir.Up;
