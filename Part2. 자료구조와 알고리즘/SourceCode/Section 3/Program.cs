@@ -42,8 +42,9 @@ namespace Section_3
 			 */
 			#endregion
 
-			GraphTest graphTest = new GraphTest();
-			graphTest.BFS_toArray(0);
+			Dijkstra.SearchDijkstra(0);
+
+
 		}
 	}
 }
