@@ -70,12 +70,12 @@
 > 클래스에 특정 메소드를 구현함으로써 클래스의 깊은 복사 기능을 메소드화 할 수 있다.
 ```c#
 public Knight Clone()
-    {
-        Knight cloneKnight = new Knight();
-        cloneKnight.hp = hp;
-        cloneKnight.attack = attack;
-        return cloneKnight;
-    }
+{
+    Knight cloneKnight = new Knight();
+    cloneKnight.hp = hp;
+    cloneKnight.attack = attack;
+    return cloneKnight;
+}
 ```
 
 

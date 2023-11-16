@@ -1,4 +1,4 @@
-# Section 3.2 Hello MVC #2
+# Section 3.3 Hello MVC #2
 ## Views
 
 
