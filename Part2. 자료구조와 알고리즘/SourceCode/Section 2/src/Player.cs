@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Section_5;
 
 namespace Section_2.src
 {
-	class Player
+	public class Player
 	{
 		public enum Dir
 		{
@@ -38,9 +39,59 @@ namespace Section_2.src
 			_board.SetDestYX(destY, destX);
 			//RightHand();
 
-			BFS_practice();
+			AStart();
 		}
-		#region 플레이어 이동 로직 (우수법, BFS)
+		#region 플레이어 이동 로직 (우수법, BFS, A*)
+		
+		struct PQNode : IComparable<PQNode>
+		{
+			public int G;
+			public int H;
+			public int Y;
+			public int X;
+
+			public int CompareTo(PQNode other)
+			{
+				if (G + H == other.G + other.H)
+					return 0;
+				return G + H < other.G + H ? 1 : -1;
+			}
+		}
+
+		void AStart()
+		{
+			// F = G + H
+			// G = 시작점에서 해당 좌표까지 이동하는데 드는 비용 (경로에 따라 달라짐)
+			// H = 목적지에서 얼마나 가까운지에 대한 값 (어떤 방식으로 계산할지는 사용자 결정)
+
+			// 방문 여부를 확인하는 closed 리스트 
+			bool[,] closed = new bool[_board.Size, _board.Size];
+
+			// 경로 예약 여부를 확인하는 open 리스트, 초기값은 매우 큰값(F값을 이용하여 예약)
+			int[,] open = new int[_board.Size, _board.Size];
+			for (int y = 0; y < _board.Size; y++)
+				for (int x =0; x < _board.Size; x++)
+					open[y, x] = Int32.MaxValue;
+
+			// open 리스트에서 가장 좋은 정보를 뽑아오기 위한 우선순위 큐
+			PriorityQueue<PQNode> pq = new PriorityQueue<PQNode>();
+
+			// 시작 좌표이므로 이동 경로 비용 0
+			open[PosY, PosX] = 0 + Heuristic(PosY, PosX, _board.DesY, _board.DesX);
+			pq.Push(new PQNode() { G = 0, H = Heuristic(PosY, PosX, _board.DesY, _board.DesX), Y = PosY, X = PosX});	
+
+			while (true)
+			{
+				// 제일 좋은 후보 탐색, 우선순위 큐를 사용하면 편리하다.
+			}
+		}
+		
+		// 휴리스틱 정책에 따른 함수 정의
+		int Heuristic(int PosY,int PosX,int DesY, int DesX)
+		{
+			return Math.Abs(DesY - PosY) + Math.Abs(DesX - PosX);
+		}
+		
 		void BFS_practice()
 		{
 			bool[,] found = new bool[_board.Size, _board.Size];
@@ -90,8 +141,6 @@ namespace Section_2.src
 			_movePath.Reverse();
 
 		}
-
-
 		void BFS()
 		{
 			int[] deltaY = new int[] { -1, 0, 1, 0 };

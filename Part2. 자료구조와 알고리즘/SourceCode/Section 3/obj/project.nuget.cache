@@ -1,12 +1,15 @@
 {
   "version": 2,
-<<<<<<< Updated upstream
-  "dgSpecHash": "oFY5bEmpw1lyIgqYPW7RpyMMne7VrmGIL8AohTvHnmIHsfHqSpQ0drrTBMi99Prb2qI+oFRot+su6SCWp4NpiA==",
-=======
   "dgSpecHash": "Zvi9rMQM/rDbptkazDgG6MyTUcEE2pednvAVxnTKf9iairEVa7CymYwGHgMIGe35TEQZBXmeZG3RFlmM6rEDzg==",
->>>>>>> Stashed changes
   "success": true,
-  "projectFilePath": "D:\\github\\Inflearn_LectureNote_Rookiss\\Part2. 자료구조와 알고리즘\\SourceCode\\Section 3\\Section 3.csproj",
+  "projectFilePath": "C:\\Users\\secureletter\\Documents\\GitHub\\Inflearn_LectureNote_Rookiss\\Part2. 자료구조와 알고리즘\\SourceCode\\Section 3\\Section 3.csproj",
   "expectedPackageFiles": [],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "캐시 파일 C:\\Users\\secureletter\\Documents\\GitHub\\Inflearn_LectureNote_Rookiss\\Part2. 자료구조와 알고리즘\\SourceCode\\Section 3\\obj\\project.nuget.cache을(를) 읽는 동안 문제가 발생했습니다. Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Section_2.src
 {
-	class Board
+	public class Board
 	{
 		public enum TileType
 		{
