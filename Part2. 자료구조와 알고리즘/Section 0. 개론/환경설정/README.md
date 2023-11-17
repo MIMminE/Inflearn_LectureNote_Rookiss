@@ -1,14 +1,66 @@
-# Section 0-3 프로그래밍 OT
-***Date : 2023. 08. 22***
-> 게임 프로그래밍에 있어 컴퓨터 장치들, 그 중 CPU, 기억장치, GPU와 연관지어 설명한다.
+# Section 0 환경설정
+## 프레임 관리
 
-### 컴퓨터의 핵심 부품
-- CPU는 컴퓨터의 핵심 연산을 담당하는 장치이다. 연산 능력은 좋지만 따로 기억공간을 가지고 있지 않다.
-- 기억장치는 연산에 필요한 데이터를 저장하는 장치이며, RAM과 Disk로 나뉜다.
-- RAM은 CPU의 연산과정에서 관련 데이터들을 기억하고 전달해주는 속도가 빠른 기억장치이다. 속도가 빠른 대신 컴퓨터의 전원이 꺼지면 데이터가 모두 사라진다.
-- Disk는 데이터의 반영구저장을 위한 스토리지이다. RAM에 비하면 속도가 느린편이다.
-- GPU는 그래픽스 작업, 채굴 등의 상대적으로 단순 연산의 반복을 CPU대신 하는 장치이다. 보통 그래픽 카드라고 불리며 GPU는 병렬 처리에 특화되어 있으며 코어 개수로 월등하게 많다.
+게임 클라이언트는 기본적으로 `입력 → 로직 → 렌더링`의 순서로 프로세스가 설계되어 있다. 
 
-### 게임 개발에 있어서...
-  - 프로그램은 컴퓨터의 핵심 부품에서 보다시피 결국 연산(게임 로직)과 데이터로 이루저져 있다.
-  - 게임 내 데이터를 어떻게 만들어서 관리를 할지, 어떻게 가공해서 CPU가 게임을 진행시킬지를 정하는 것이 게임 개발에 핵심이다.
+- 입력 : 사용자의 키보드와 마우스 등에 의한 입력 감지
+- 로직 : 입력된 키에 대한 이벤트 처리 및 로직 수행
+- 렌더링 : 수행된 기능들이 반영된 세상을 렌더링(DirextX, OpenGL 등의 라이브러리)
+
+만약 로컬 게임이 아닌 서버가 결합되어 있는 게임이라면 로직 수행 부분을 서버가 담당하고 통신이 오가며 렌더링을 클라이언트가 해주는 방식을 대체로 사용한다.
+
+```csharp
+while(true)
+{
+	// 입력
+
+	// 로직
+
+	// 렌더링
+}
+```
+
+무한으로 돌면서 현재 게임 세계 상태를 렌더링 해주는 것인데, 프레임이란 **1초에 몇 번 렌더링이 되냐를 의미**한다. 보통 FPS게임에서는 60프레임 정도를 기준으로 삼고 30프레임 밑으로 떨어지면 크게 문제가 생긴다는 것으로 본다.
+
+```csharp
+const int WAIT_TICK = 1000 / 30; 
+// 1/30초에 한번 렌더링 되도록 하기 위한 값, 하드코딩을 피하기 위한 상수설정
+int lastTick = 0;
+while(true)
+{
+		#region 프레임 관리 
+			int currentTick = System.Environment.TickCount;
+												//시스템 시간을 기준으로 하며, 밀리 초 단위이다.
+			if (currentTick - lastTick < WAIT_TICK)
+			    continue;
+			lastTick = currentTick;
+		#endregion
+}
+```
+
+### 콘솔에 좌표 그리기
+
+```csharp
+int lastTick = 0;
+
+const int WAIT_TICK = 1000 / 30;
+const char CIRCLE = '\u25cf'; // 원에 해당하는 코드
+ConsoleColor DEFAULT_COLOR = Console.ForegroundColor;
+Console.CursorVisible = false;
+while (true)
+{
+    #region 프레임 관리 
+
+    Console.SetCursorPosition(0, 0);
+    Console.ForegroundColor = ConsoleColor.Green;
+    for (int i = 0; i < 25; i++)
+    {
+        for (int j = 0; j < 25; j++)
+        {
+            Console.Write(CIRCLE);
+        }
+        Console.WriteLine();
+    }
+    Console.ForegroundColor = DEFAULT_COLOR;
+}
+```

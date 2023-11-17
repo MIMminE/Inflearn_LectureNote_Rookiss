@@ -15,7 +15,7 @@
 ```csharp
 static public List<int>[] adjacent1 = new List<int>[6]
 {
-		new List<int>() { 1, 3 },
+	new List<int>() { 1, 3 },
     new List<int>() { 0, 2, 3 },
     new List<int>() { 1 },
     new List<int>() { 0, 1, 4 },
@@ -27,7 +27,7 @@ static public List<int>[] adjacent1 = new List<int>[6]
 ```csharp
 static public int[,] adjacent2 = new int[6,6]
 {
-		{ 0, 1, 0, 1, 0, 0 },
+	{ 0, 1, 0, 1, 0, 0 },
     { 1, 0, 1, 1, 0, 0 },
     { 0, 1, 0, 0, 0, 0 },
     { 1, 1, 0, 1, 0, 0 },

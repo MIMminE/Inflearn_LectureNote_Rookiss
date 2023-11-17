@@ -42,9 +42,9 @@ namespace Section_3
 			 */
 			#endregion
 
-			Dijkstra.SearchDijkstra(0);
-
-
+			var root = TreeTest.CreateTreeNode();
+			TreeTest.PrintTree(root);
+			Console.WriteLine(TreeTest.GetHeight(root));
 		}
 	}
 }
