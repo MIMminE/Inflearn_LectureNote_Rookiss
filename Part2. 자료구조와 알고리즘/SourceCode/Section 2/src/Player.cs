@@ -63,33 +63,80 @@ namespace Section_2.src
 			// F = G + H
 			// G = 시작점에서 해당 좌표까지 이동하는데 드는 비용 (경로에 따라 달라짐)
 			// H = 목적지에서 얼마나 가까운지에 대한 값 (어떤 방식으로 계산할지는 사용자 결정)
+			int[] deltaY = new int[] { -1, 0, 1, 0, -1, 1, 1, -1 };
+			int[] deltaX = new int[] { 0, -1, 0, 1, -1, -1, 1 ,1 };
+			int[] cost = new int[] { 10, 10, 10, 10, 14, 14, 14, 14 };
 
 			// 방문 여부를 확인하는 closed 리스트 
 			bool[,] closed = new bool[_board.Size, _board.Size];
+			
 
 			// 경로 예약 여부를 확인하는 open 리스트, 초기값은 매우 큰값(F값을 이용하여 예약)
 			int[,] open = new int[_board.Size, _board.Size];
 			for (int y = 0; y < _board.Size; y++)
-				for (int x =0; x < _board.Size; x++)
+				for (int x = 0; x < _board.Size; x++)
 					open[y, x] = Int32.MaxValue;
+
+
+			Pos[,] parent = new Pos[_board.Size, _board.Size];
 
 			// open 리스트에서 가장 좋은 정보를 뽑아오기 위한 우선순위 큐
 			PriorityQueue<PQNode> pq = new PriorityQueue<PQNode>();
 
 			// 시작 좌표이므로 이동 경로 비용 0
 			open[PosY, PosX] = 0 + Heuristic(PosY, PosX, _board.DesY, _board.DesX);
-			pq.Push(new PQNode() { G = 0, H = Heuristic(PosY, PosX, _board.DesY, _board.DesX), Y = PosY, X = PosX});	
+			pq.Push(new PQNode() { G = 0, H = Heuristic(PosY, PosX, _board.DesY, _board.DesX), Y = PosY, X = PosX });
+			parent[PosY, PosX] = new Pos(PosY, PosX);
 
 			while (true)
 			{
 				// 제일 좋은 후보 탐색, 우선순위 큐를 사용하면 편리하다.
+				PQNode node = pq.Pop();
+
+				// 동일한 좌표를 여러 경로로 찾아서, 더 빠른 경로로 인해 이미 방문된 경우 스킵
+				if (closed[node.Y, node.X])
+					continue;
+
+				// 방문한다.
+				closed[node.Y, node.X] = true;
+				// 목적지 도착했으면 바로 종료
+				if (node.Y == _board.DesY && node.X == _board.DesX)
+					break;
+
+				// 상하좌우 등 이동할 수 있는 좌표인지 확인해서 예약(open 리스트)한다.
+				for (int i = 0; i < deltaY.Length; i++)
+				{
+					int nextY = node.Y + deltaY[i];
+					int nextX = node.X + deltaX[i];
+
+					// 각 좌표에 대한 체크, 
+					if (nextX < 0 || nextX >= _board.Size || nextY < 0 || nextY >= _board.Size)
+						continue;
+					if (_board.Tile[nextY, nextX] == Board.TileType.Wall)
+						continue;
+					if (closed[nextY, nextX])
+						continue;
+
+					// 이전 노드에서 현재 노드까지의 거리 계산, 현재는 각 노드 이동에 가중치가 없으므로
+					// +1 연산이 이동 비용이다. 하지만 확장성을 위하여 이동 비용을 따로 관리한다.
+					int g = node.G + cost[i];
+					int h = Heuristic(nextY, nextX, _board.DesY, _board.DesX);
+					// 다른 경로에서 다 빠른 길을 이미 찾았다면 스킵
+					if (open[nextY, nextX] < g + h) continue;
+
+					// 예약 진행
+					open[nextY, nextX] = g + h;
+					pq.Push(new PQNode() { G = g, H = h, Y = nextY, X = nextX });
+                    parent[nextY, nextX] = new Pos(node.Y, node.X);
+                }
 			}
-		}
+            CalcPathFromParent(parent);
+        }
 		
 		// 휴리스틱 정책에 따른 함수 정의
 		int Heuristic(int PosY,int PosX,int DesY, int DesX)
 		{
-			return Math.Abs(DesY - PosY) + Math.Abs(DesX - PosX);
+			return 10 * (Math.Abs(DesY - PosY) + Math.Abs(DesX - PosX));
 		}
 		
 		void BFS_practice()
@@ -178,18 +225,23 @@ namespace Section_2.src
 				}
 			}
 
-			int y = _board.DesY;
-			int x = _board.DesX;
-			while (parent[y, x].Y != y || parent[y, x].X != x)
-			{
-				_movePath.Add(new int[] { y, x });
-				Pos pos = parent[y, x];
-				y = pos.Y;
-				x = pos.X;
-			}
-			_movePath.Add(new int[] { y, x });
-			_movePath.Reverse();
+			CalcPathFromParent(parent);
 		}
+
+		void CalcPathFromParent(Pos[,] parent)
+		{
+            int y = _board.DesY;
+            int x = _board.DesX;
+            while (parent[y, x].Y != y || parent[y, x].X != x)
+            {
+                _movePath.Add(new int[] { y, x });
+                Pos pos = parent[y, x];
+                y = pos.Y;
+                x = pos.X;
+            }
+            _movePath.Add(new int[] { y, x });
+            _movePath.Reverse();
+        }
 		void RightHand()
 		{
 

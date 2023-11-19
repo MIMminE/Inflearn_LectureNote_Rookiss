@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\secureletter\\Documents\\GitHub\\Inflearn_LectureNote_Rookiss\\Part2. 자료구조와 알고리즘\\SourceCode\\Section 3\\Section 3.csproj": {}
+    "D:\\github\\Inflearn_LectureNote_Rookiss\\Part2. 자료구조와 알고리즘\\SourceCode\\Section 3\\Section 3.csproj": {}
   },
   "projects": {
-    "C:\\Users\\secureletter\\Documents\\GitHub\\Inflearn_LectureNote_Rookiss\\Part2. 자료구조와 알고리즘\\SourceCode\\Section 3\\Section 3.csproj": {
+    "D:\\github\\Inflearn_LectureNote_Rookiss\\Part2. 자료구조와 알고리즘\\SourceCode\\Section 3\\Section 3.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\secureletter\\Documents\\GitHub\\Inflearn_LectureNote_Rookiss\\Part2. 자료구조와 알고리즘\\SourceCode\\Section 3\\Section 3.csproj",
+        "projectUniqueName": "D:\\github\\Inflearn_LectureNote_Rookiss\\Part2. 자료구조와 알고리즘\\SourceCode\\Section 3\\Section 3.csproj",
         "projectName": "Section 3",
-        "projectPath": "C:\\Users\\secureletter\\Documents\\GitHub\\Inflearn_LectureNote_Rookiss\\Part2. 자료구조와 알고리즘\\SourceCode\\Section 3\\Section 3.csproj",
-        "packagesPath": "C:\\Users\\secureletter\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\secureletter\\Documents\\GitHub\\Inflearn_LectureNote_Rookiss\\Part2. 자료구조와 알고리즘\\SourceCode\\Section 3\\obj\\",
+        "projectPath": "D:\\github\\Inflearn_LectureNote_Rookiss\\Part2. 자료구조와 알고리즘\\SourceCode\\Section 3\\Section 3.csproj",
+        "packagesPath": "C:\\Users\\harun\\.nuget\\packages\\",
+        "outputPath": "D:\\github\\Inflearn_LectureNote_Rookiss\\Part2. 자료구조와 알고리즘\\SourceCode\\Section 3\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\secureletter\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\harun\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -55,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }

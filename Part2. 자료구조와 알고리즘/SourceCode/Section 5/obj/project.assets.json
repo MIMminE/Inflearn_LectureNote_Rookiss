@@ -8,19 +8,19 @@
     "net7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\secureletter\\.nuget\\packages\\": {}
+    "C:\\Users\\harun\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\secureletter\\Documents\\GitHub\\Inflearn_LectureNote_Rookiss\\Part2. 자료구조와 알고리즘\\SourceCode\\Section 5\\Section 5.csproj",
+      "projectUniqueName": "D:\\github\\Inflearn_LectureNote_Rookiss\\Part2. 자료구조와 알고리즘\\SourceCode\\Section 5\\Section 5.csproj",
       "projectName": "Section 5",
-      "projectPath": "C:\\Users\\secureletter\\Documents\\GitHub\\Inflearn_LectureNote_Rookiss\\Part2. 자료구조와 알고리즘\\SourceCode\\Section 5\\Section 5.csproj",
-      "packagesPath": "C:\\Users\\secureletter\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\secureletter\\Documents\\GitHub\\Inflearn_LectureNote_Rookiss\\Part2. 자료구조와 알고리즘\\SourceCode\\Section 5\\obj\\",
+      "projectPath": "D:\\github\\Inflearn_LectureNote_Rookiss\\Part2. 자료구조와 알고리즘\\SourceCode\\Section 5\\Section 5.csproj",
+      "packagesPath": "C:\\Users\\harun\\.nuget\\packages\\",
+      "outputPath": "D:\\github\\Inflearn_LectureNote_Rookiss\\Part2. 자료구조와 알고리즘\\SourceCode\\Section 5\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\secureletter\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\harun\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -61,7 +61,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -8,8 +8,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Section 5\Section 5.csproj" />
-  </ItemGroup>
-
 </Project>
