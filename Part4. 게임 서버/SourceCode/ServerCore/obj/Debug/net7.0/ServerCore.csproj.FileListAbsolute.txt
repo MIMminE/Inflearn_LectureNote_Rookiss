@@ -1,0 +1,14 @@
+D:\github\Inflearn_LectureNote_Rookiss\Part4. 게임 서버\SourceCode\ServerCore\bin\Debug\net7.0\ServerCore.exe
+D:\github\Inflearn_LectureNote_Rookiss\Part4. 게임 서버\SourceCode\ServerCore\bin\Debug\net7.0\ServerCore.deps.json
+D:\github\Inflearn_LectureNote_Rookiss\Part4. 게임 서버\SourceCode\ServerCore\bin\Debug\net7.0\ServerCore.runtimeconfig.json
+D:\github\Inflearn_LectureNote_Rookiss\Part4. 게임 서버\SourceCode\ServerCore\bin\Debug\net7.0\ServerCore.dll
+D:\github\Inflearn_LectureNote_Rookiss\Part4. 게임 서버\SourceCode\ServerCore\bin\Debug\net7.0\ServerCore.pdb
+D:\github\Inflearn_LectureNote_Rookiss\Part4. 게임 서버\SourceCode\ServerCore\obj\Debug\net7.0\ServerCore.GeneratedMSBuildEditorConfig.editorconfig
+D:\github\Inflearn_LectureNote_Rookiss\Part4. 게임 서버\SourceCode\ServerCore\obj\Debug\net7.0\ServerCore.AssemblyInfoInputs.cache
+D:\github\Inflearn_LectureNote_Rookiss\Part4. 게임 서버\SourceCode\ServerCore\obj\Debug\net7.0\ServerCore.AssemblyInfo.cs
+D:\github\Inflearn_LectureNote_Rookiss\Part4. 게임 서버\SourceCode\ServerCore\obj\Debug\net7.0\ServerCore.csproj.CoreCompileInputs.cache
+D:\github\Inflearn_LectureNote_Rookiss\Part4. 게임 서버\SourceCode\ServerCore\obj\Debug\net7.0\ServerCore.dll
+D:\github\Inflearn_LectureNote_Rookiss\Part4. 게임 서버\SourceCode\ServerCore\obj\Debug\net7.0\refint\ServerCore.dll
+D:\github\Inflearn_LectureNote_Rookiss\Part4. 게임 서버\SourceCode\ServerCore\obj\Debug\net7.0\ServerCore.pdb
+D:\github\Inflearn_LectureNote_Rookiss\Part4. 게임 서버\SourceCode\ServerCore\obj\Debug\net7.0\ServerCore.genruntimeconfig.cache
+D:\github\Inflearn_LectureNote_Rookiss\Part4. 게임 서버\SourceCode\ServerCore\obj\Debug\net7.0\ref\ServerCore.dll
