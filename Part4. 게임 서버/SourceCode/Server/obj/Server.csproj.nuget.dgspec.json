@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\github\\Inflearn_LectureNote_Rookiss\\Part4. 게임 서버\\SourceCode\\Server\\Server.csproj": {}
+    "D:\\Inflearn_LectureNote_Rookiss\\Part4. 게임 서버\\SourceCode\\Server\\Server.csproj": {}
   },
   "projects": {
-    "D:\\github\\Inflearn_LectureNote_Rookiss\\Part4. 게임 서버\\SourceCode\\Server\\Server.csproj": {
+    "D:\\Inflearn_LectureNote_Rookiss\\Part4. 게임 서버\\SourceCode\\Server\\Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\github\\Inflearn_LectureNote_Rookiss\\Part4. 게임 서버\\SourceCode\\Server\\Server.csproj",
+        "projectUniqueName": "D:\\Inflearn_LectureNote_Rookiss\\Part4. 게임 서버\\SourceCode\\Server\\Server.csproj",
         "projectName": "Server",
-        "projectPath": "D:\\github\\Inflearn_LectureNote_Rookiss\\Part4. 게임 서버\\SourceCode\\Server\\Server.csproj",
-        "packagesPath": "C:\\Users\\harun\\.nuget\\packages\\",
-        "outputPath": "D:\\github\\Inflearn_LectureNote_Rookiss\\Part4. 게임 서버\\SourceCode\\Server\\obj\\",
+        "projectPath": "D:\\Inflearn_LectureNote_Rookiss\\Part4. 게임 서버\\SourceCode\\Server\\Server.csproj",
+        "packagesPath": "C:\\Users\\secureletter\\.nuget\\packages\\",
+        "outputPath": "D:\\Inflearn_LectureNote_Rookiss\\Part4. 게임 서버\\SourceCode\\Server\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\harun\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\secureletter\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -55,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

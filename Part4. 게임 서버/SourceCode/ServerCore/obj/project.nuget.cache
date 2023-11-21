@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "KLg9BW9180Y82zDIVyN4BSRJiq+qdzEVXu6QN1EPhqfBlVYzqfis6JWE+j9bnHpJC0PALVQX6jZ8q7k3LsLuSQ==",
+  "dgSpecHash": "xdAzDBeWQouzlKOmSRzq1f9EkXzwmk8ql0EOr9t/LY03HmoMHkK3l52Akq2FoRlpQcbfKD/yuI5W6sKFV5p5Jg==",
   "success": true,
-  "projectFilePath": "D:\\github\\Inflearn_LectureNote_Rookiss\\Part4. 게임 서버\\SourceCode\\ServerCore\\ServerCore.csproj",
+  "projectFilePath": "D:\\Inflearn_LectureNote_Rookiss\\Part4. 게임 서버\\SourceCode\\ServerCore\\ServerCore.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

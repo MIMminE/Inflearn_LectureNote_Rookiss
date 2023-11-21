@@ -17,7 +17,7 @@ namespace ServerCore
         {
             // 문지기 생성
             _listenSocket = new Socket(endPoint.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
-            _onAcceptHandler += onAcceptHandler; // 핸들러 덮어쓰기가 아닌 핸들러에 추가 핸들러 등록하는 것
+            
 
             // 문지기 교육
             _listenSocket.Bind(endPoint);
@@ -26,6 +26,7 @@ namespace ServerCore
 
             SocketAsyncEventArgs args = new SocketAsyncEventArgs();
             args.Completed += new EventHandler<SocketAsyncEventArgs>(OnAcceptCompleted);
+            //비동기 작업이 완료되면 호출되는 메소드 등록
             RegisterAccept(args);
         }
 
@@ -35,7 +36,6 @@ namespace ServerCore
 
             bool pending = _listenSocket.AcceptAsync(args); 
             if (pending == false) OnAcceptCompleted(null, args); // 우연찮게 통신 시도하자마자 바로 허가된 상황
-            
         }
 
         void OnAcceptCompleted(object sender, SocketAsyncEventArgs args)
@@ -50,13 +50,5 @@ namespace ServerCore
             RegisterAccept(args); // 다음 사용자를 위해 재등록
         }
 
-
-        public Socket Accept()
-        {
-            _listenSocket.AcceptAsync();
-
-            //요청하는 부분과 실제 처리되는 부분을 분리해야한다.
-            return _listenSocket.Accept(); //blocking 계열 함수는 최대한 피해야 한다. 
-        }
     }
 }

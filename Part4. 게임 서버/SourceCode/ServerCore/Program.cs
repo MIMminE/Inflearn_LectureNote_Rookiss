@@ -10,28 +10,24 @@ namespace ServerCore
         {
             try
             {
-                // 받는다.
-                byte[] recvBuff = new byte[1024];
-                int receByte = clientSocket.Receive(recvBuff);
-                // 몇 Byte를 받았는지 반환해준다.
-                string receData = Encoding.UTF8.GetString(recvBuff, 0, receByte);
-                Console.WriteLine($"From Client : {receData}");
-                // Socket 통신은 기본적으로 Byte 단위이므로 인코딩 과정이 필요하다. 
+				Session session = new Session();
+				session.init(clientSocket);
 
                 // 보낸다.
                 byte[] sendBuffer = Encoding.UTF8.GetBytes("Welcome to MMO Server");
                 clientSocket.Send(sendBuffer);
 
                 // 쫒아낸다.
-                clientSocket.Shutdown(SocketShutdown.Both); // 양측 데이터 전송 중단할 것을 의미
-                clientSocket.Close(); // 실제 연결 끊음을 의미
+
+                Thread.Sleep(1000);
+                session.Disconnect();
             }
             catch(Exception e)
             {
                 Console.WriteLine(e.ToString());
             }
-
         }
+
         static void Main(string[] args)
         {
             // DNS

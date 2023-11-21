@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YOmmVM6gZ1tRtmXHxjzk1jY0ZUvXaF6DGcG5ADI4rCNGe0R/3SYKfOJI0BdgXxxNx1WyhMcZqRWY+rhTzH+1+A==",
+  "dgSpecHash": "PURlmPLvoN9eNK+7pQI+EhSqjYbRgVV9qWEydkpJla7ZRij6/RxRQWhyWpxhPhOONNdu1GyWA3G+Fjgr+XTrEg==",
   "success": true,
-  "projectFilePath": "D:\\github\\Inflearn_LectureNote_Rookiss\\Part4. 게임 서버\\SourceCode\\DummyClient\\DummyClient.csproj",
+  "projectFilePath": "D:\\Inflearn_LectureNote_Rookiss\\Part4. 게임 서버\\SourceCode\\DummyClient\\DummyClient.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
